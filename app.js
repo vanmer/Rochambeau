@@ -8,20 +8,22 @@ const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
 
+// get a random computer choice
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
   const randomNumber = Math.floor(Math.random() * 3);
   return choices[randomNumber];
 }
 
+// capitalizing letters
 function convertToCapital(letter) {
   if (letter === "rock") return "ROCK";
   if (letter === "paper") return "PAPER";
   return "SCISSORS";
 }
 
+// user wins
 function win(userChoice, computerChoice) {
-  // console.log("YOU WIN");
   const userSuperscript = "user".fontsize(3).sup();
   const computerSuperscript = "comp".fontsize(3).sup();
   const userChoice_div = document.getElementById(userChoice);
@@ -33,9 +35,8 @@ function win(userChoice, computerChoice) {
   setTimeout(function() { userChoice_div.classList.remove('green-glow') }, 500);
 }
 
-
+// user loses
 function lose(userChoice, computerChoice) {
-  // console.log("YOU LOSE");
   const userSuperscript = "user".fontsize(3).sup();
   const computerSuperscript = "comp".fontsize(3).sup();
   const userChoice_div = document.getElementById(userChoice);
@@ -47,8 +48,8 @@ function lose(userChoice, computerChoice) {
   setTimeout(function() { userChoice_div.classList.remove('red-glow') }, 500);
 }
 
+// it's a draw
 function draw(userChoice, computerChoice) {
-  // console.log("DRAW");
   const userSuperscript = "user".fontsize(3).sup();
   const computerSuperscript = "comp".fontsize(3).sup();
   const userChoice_div = document.getElementById(userChoice);
@@ -57,11 +58,9 @@ function draw(userChoice, computerChoice) {
   setTimeout(function() { userChoice_div.classList.remove('grey-glow') }, 500);
 }
 
+// defines game rules
 function game(userChoice) {
-  // console.log("hella hella hella! You clicked on " + userChoice);
   const computerChoice = getComputerChoice();
-  // console.log("computer choice: " + computerChoice);
-  // console.log("user choice: " + userChoice);
   switch (userChoice + computerChoice) {
     case "rockscissors":
     case "paperrock":
@@ -81,21 +80,18 @@ function game(userChoice) {
   }
 }
 
+// when user clicks on icons, game function will be activated
 function main() {
   rock_div.addEventListener('click', function() {
-    // console.log("Hola, you clicked on rock!");
     game("rock");
   })
 
   paper_div.addEventListener('click', function() {
-    // console.log("Hola, you clicked on paper!");
     game("paper");
   })
 
   scissors_div.addEventListener('click', function() {
-    // console.log("Hola, you clicked on scissors!");
     game("scissors");
   })
 }
-
 main();
