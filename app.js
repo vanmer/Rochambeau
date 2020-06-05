@@ -32,7 +32,7 @@ function win(userChoice, computerChoice) {
   computerScore_span.innerHTML = computerScore;
   result_div.innerHTML = `${convertToCapital(userChoice)}${userSuperscript} beats ${convertToCapital(computerChoice)}${computerSuperscript} . You win!`;
   userChoice_div.classList.add('green-glow');
-  setTimeout(function() { userChoice_div.classList.remove('green-glow') }, 500);
+  setTimeout( () => userChoice_div.classList.remove('green-glow'), 500);
 }
 
 // user loses
@@ -45,7 +45,7 @@ function lose(userChoice, computerChoice) {
   computerScore_span.innerHTML = computerScore;
   result_div.innerHTML = `${convertToCapital(computerChoice)}${computerSuperscript} beats ${convertToCapital(userChoice)}${userSuperscript} . You lose!`;
   userChoice_div.classList.add('red-glow');
-  setTimeout(function() { userChoice_div.classList.remove('red-glow') }, 500);
+  setTimeout( () => userChoice_div.classList.remove('red-glow'), 500);
 }
 
 // it's a draw
@@ -55,7 +55,7 @@ function draw(userChoice, computerChoice) {
   const userChoice_div = document.getElementById(userChoice);
   result_div.innerHTML = `${convertToCapital(computerChoice)}${computerSuperscript} equals ${convertToCapital(userChoice)}${userSuperscript} . It's a draw!`;
   userChoice_div.classList.add('grey-glow');
-  setTimeout(function() { userChoice_div.classList.remove('grey-glow') }, 500);
+  setTimeout( () => userChoice_div.classList.remove('grey-glow'), 500);
 }
 
 // defines game rules
