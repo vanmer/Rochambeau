@@ -11,7 +11,7 @@ body {
 
 header {
   background-color: white;
-  padding: 20px;
+  padding: 30px;
 }
 
 header > h1 {
@@ -20,7 +20,7 @@ header > h1 {
 }
 
 article {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .score-board {
